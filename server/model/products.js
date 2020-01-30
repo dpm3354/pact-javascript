@@ -33,12 +33,12 @@ function getById (id) {
 }
 
 function updateById (id, product) {
-  data.set(id, product)
+  data.set(parseInt(id), product)
   return product
 }
 
 function removeById (id) {
-  data.delete(id)
+  data.delete(parseInt(id))
 }
 
 function _flush () {
