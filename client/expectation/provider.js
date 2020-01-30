@@ -1,5 +1,9 @@
 'use strict'
 
+/**
+ * This class sets up the PACT provider.  After the consumer tests run this will output the new contract in ./pacts/client-productservice.json
+ */
+
 const path = require('path')
 const pact = require('pact')
 

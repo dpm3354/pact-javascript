@@ -1,5 +1,10 @@
 'use strict'
 
+/**
+ * This class sets up the environment for the PACT tests.  The case is mirrored by the providerState in the client-productservice.json file.
+ * Also, the UI shows the providerState in bold.  The case must mirror that in order to set up the individual tests correctly.
+ */
+
 const app = require('../productService')
 const products = require('../model/products')
 

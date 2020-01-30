@@ -1,4 +1,8 @@
 'use strict'
+/**
+ * This class is the test for the client.  The requests to the backend are mocked out.
+ */
+
 
 /* eslint-disable prefer-arrow-callback */
 const chai = require('chai')

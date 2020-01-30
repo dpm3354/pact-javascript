@@ -1,5 +1,10 @@
 'use strict'
 
+/**
+ * This class runs the PACT tests
+ *
+ */
+
 const pact = require('@pact-foundation/pact-node')
 require('./testProductsService')
 

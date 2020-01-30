@@ -1,4 +1,10 @@
 'use strict'
+
+/**
+ * This class is the server's business logic for the controller.
+ *
+ */
+
 const _ = require('lodash')
 
 const data = new Map

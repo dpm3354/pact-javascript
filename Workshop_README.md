@@ -147,4 +147,6 @@ npm run test-provider
 
 
 ### Challenge / Extra Credit:
-Create a new 
+Create a new PACT test for deleting an product
+
+Extra credit: Create a new PACT test for updating a product

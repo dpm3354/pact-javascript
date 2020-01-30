@@ -1,4 +1,8 @@
 'use strict'
+/**
+ * This class mocks out the requests the client test will make.
+ */
+
 const { somethingLike: like, eachLike, term } = require('pact').Matchers
 
 const ONE_PRODUCT_BODY = [ { name: 'Foo' } ]

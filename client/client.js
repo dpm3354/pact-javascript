@@ -1,5 +1,9 @@
 'use strict'
 
+/**
+ * This class calls the backend.
+ */
+
 const request = require('request-promise-native')
 const _ = require('lodash')
 
