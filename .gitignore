@@ -1,0 +1,7 @@
+.nvmrc
+*.log
+logs
+pacts
+node_modules
+.idea
+package-lock.json
