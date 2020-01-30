@@ -2,7 +2,6 @@
 
 This is an example application for demonstrating the use of pact and consumer driven contract testing.
 
-The codebase was created for the blogpost **TBA**.
 
 ## Usage
 
@@ -44,6 +43,18 @@ Verify pacts against the provider
 
 ```bash
 $ npm run test-provider
+```
+
+Run all tests (broker must be running)
+
+```bash
+$ npm test
+```
+
+Stop docker / pact-broker
+
+```bash
+$ npm run stop-broker
 ```
 
 ## Compatibility

@@ -5,44 +5,54 @@ const _ = require('lodash')
 
 const PRODUCTS_SERVICE_URL = process.env.PRODUCTS_SERVICE_URL || 'http://localhost:1234'
 
-async function getAllProducts () {
-  const products = await request(`${PRODUCTS_SERVICE_URL}/products`)
-    .then(JSON.parse)
+async function getAllProducts() {
+    const products = await request(`${PRODUCTS_SERVICE_URL}/products`)
+        .then(JSON.parse)
 
-  const productsString = _.reduce(products, (logString, product) => `${logString} ${product.name}`, 'CLIENT: Current products are:')
+    const productsString = _.reduce(products, (logString, product) => `${logString} ${product.name}`, 'CLIENT: Current products are:')
 
-  console.log(productsString)
+    console.log(productsString)
 }
 
-function getProducts (query) {
-  return request({
-    uri: `${PRODUCTS_SERVICE_URL}/products`,
-    qs: query,
-    json: true
-  })
+function getProducts(query) {
+    return request({
+        uri: `${PRODUCTS_SERVICE_URL}/products`,
+        qs: query,
+        json: true
+    })
 }
 
-function getById (id) {
-  return request({
-    uri: `${PRODUCTS_SERVICE_URL}/products/` + id,
-    json: true
-  })
+function getById(id) {
+    return request({
+        uri: `${PRODUCTS_SERVICE_URL}/products/` + id,
+        json: true
+    })
 }
 
 function registerProduct(product) {
-  return request.post({
-    url: `${PRODUCTS_SERVICE_URL}/products`,
-    body: product,
-    json: true,
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+    return request.post({
+        url: `${PRODUCTS_SERVICE_URL}/products`,
+        body: product,
+        json: true,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
+
+function removeById(req, res) {
+    const productId = req.params.id
+
+    products.removeById(productId)
+
+    res.statusCode = 204
+    res.end()
 }
 
 module.exports = {
-  getAllProducts,
-  getProducts,
-  registerProduct,
-  getById
+    getAllProducts,
+    getProducts,
+    registerProduct,
+    getById,
+    removeById
 }
