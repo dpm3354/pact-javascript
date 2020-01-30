@@ -24,6 +24,10 @@ app.post('/test/setup', (req, res) => {
       products.create({ name: 'Baz', img: 'https://webshop.com/img/baz.png', price: 3, stock: 5})
       products.create({ name: 'Thing', img: 'https://webshop.com/img/thing.png', price: 6, stock: 2})
       break
+    case 'A product with id 1 exists':
+      products._flush()
+      products.create({ name: 'Foo', img: 'https://webshop.com/img/cheap-shoe.png', price: 1, stock: 1})
+      break
     default:
       break
   }

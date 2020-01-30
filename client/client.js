@@ -44,13 +44,11 @@ function registerProduct(product) {
     })
 }
 
-function removeById(req, res) {
-    const productId = req.params.id
-
-    products.removeById(productId)
-
-    res.statusCode = 204
-    res.end()
+function removeById(id) {
+    return request.delete({
+        uri: `${PRODUCTS_SERVICE_URL}/products/` + id,
+        json: true
+    })
 }
 
 module.exports = {

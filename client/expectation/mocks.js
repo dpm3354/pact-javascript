@@ -81,5 +81,16 @@ module.exports = {
       status: 201,
       body: REGISTRATION_RESPONSE_BODY
     }
+  },
+  removeById: {
+    state: 'A product with id 1 exists',
+    uponReceiving: 'a request to delete a product with id of 1',
+    withRequest: {
+      method: 'DELETE',
+      path: '/products/1'
+    },
+    willRespondWith: {
+      status: 204
+    }
   }
 }

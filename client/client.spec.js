@@ -76,4 +76,14 @@ describe('product handling', () => {
       await provider.verify()
     })
   })
+
+  describe('#deleteProduct', () => {
+    it('should delete a product based on id', async function () {
+      await provider.addInteraction(mocks.removeById)
+
+      const response = await client.removeById(1)
+
+      await provider.verify()
+    })
+  })
 })
