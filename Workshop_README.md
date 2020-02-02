@@ -31,7 +31,7 @@ describe('#getById', () => {
 })
 ```
 
-#### 2. In mocks.js, add the following interaction after registerProduct (line 80)
+#### 2. In mocks.js, add the following interaction after registerProduct (line 84)
 ./client/expectation/mocks.js
 
 ```
@@ -138,6 +138,7 @@ ProductService will respond with:
 case 'a product with id of 1 is created':
   products._flush()
   products.create({ name: 'Bar', img: 'https://webshop.com/img/cheap-shoe.png', price: 2, stock: 3})
+  break;
 ```
 
 #### 6. Finally, run the provider tests
